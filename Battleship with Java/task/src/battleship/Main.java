@@ -86,7 +86,7 @@ public class Main {
                 } else {
                     String[][] userCoords = new String[2][2];
                     if (Checks.checkBasic2CoordInput(rawInput)) {
-                        userCoords = Process.inputToShipCoords(scanner.nextLine());
+                        userCoords = Process.inputToShipCoords(rawInput);
                     }
                     if (Checks.checkUserCoords(userCoords, i)) {
                         String[] parts = Process.shipCoordsToParts(userCoords, i);
