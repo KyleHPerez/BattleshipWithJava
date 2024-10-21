@@ -13,7 +13,7 @@ public class Main {
         System.out.println("\nPlayer 1, place your ships on the game field.\n");
         player1Field.printDisplay(player1Field.playerDisplay);
         System.out.println();
-        initializeFleet(scanner, player1Field, player2Field);
+        initializeFleet(scanner, player1Field);
 
         System.out.println("Press Enter and pass the game to the next player\n...\n");
         scanner.nextLine();
@@ -21,7 +21,7 @@ public class Main {
         System.out.println("Player 2, place your ships on the game field.\n");
         player2Field.printDisplay(player2Field.playerDisplay);
         System.out.println();
-        initializeFleet(scanner, player2Field, player2Field);
+        initializeFleet(scanner, player2Field);
 
         do {
             passTheGame(scanner, player1Field);
@@ -62,7 +62,7 @@ public class Main {
         } while (!shotValid);
     }
 
-    private static void initializeFleet(Scanner scanner, Field playerField, Field opponentField) {
+    private static void initializeFleet(Scanner scanner, Field playerField) {
         for (int i = 0; i < 5; i++) { //CREATE ALL PLAYER SHIPS
             boolean proceed = false;
             String shipType = ShipType.values()[i].toString();
@@ -79,9 +79,9 @@ public class Main {
                                             Input ship start and end points in the following format:
                                             One capital letter from A to J followed by a number from 1 to 10,
                                             separated from another letter-number pair by one space " ".
-                                            Ships must be placed horizontally or vertically, but not diagonally. 
+                                            Ships must be placed horizontally or vertically, but not diagonally.
                                             For example: "A1 A5" or "J10 F10" (without quotation marks).
-                                            
+                                            \n
                             """);
                 } else {
                     String[][] userCoords = new String[2][2];
